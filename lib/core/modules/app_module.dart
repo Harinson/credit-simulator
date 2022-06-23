@@ -1,3 +1,4 @@
+import 'package:credit_simulator/presenter/pages/first_step/first_step_page.dart';
 import 'package:credit_simulator/presenter/pages/home/home_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -10,6 +11,10 @@ class AppModule extends Module {
         ChildRoute(
           '/',
           child: (ctx, args) => const HomePage(),
+        ),
+        ChildRoute(
+          '/first-step',
+          child: (ctx, args) => const FirstStepPage(),
         ),
       ];
 }

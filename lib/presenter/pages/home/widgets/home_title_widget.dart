@@ -3,8 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../theme/app_theme.dart';
 
-class TitleWidget extends StatelessWidget {
-  const TitleWidget({Key? key}) : super(key: key);
+class HomeTitleWidget extends StatelessWidget {
+  const HomeTitleWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
