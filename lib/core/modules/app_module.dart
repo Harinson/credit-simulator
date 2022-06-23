@@ -1,5 +1,4 @@
 import 'package:credit_simulator/presenter/pages/home/home_page.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class AppModule extends Module {
