@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import '../theme/app_theme.dart';
 
 class TextFieldComponent extends StatelessWidget {
   final String primaryLabel;
   final String secondaryLabel;
-  const TextFieldComponent(
-      {Key? key, required this.primaryLabel, required this.secondaryLabel})
-      : super(key: key);
+  final String fieldHint;
+  final TextInputAction textInputAction;
+  final TextInputType keyboardType;
+  const TextFieldComponent({
+    Key? key,
+    required this.primaryLabel,
+    required this.secondaryLabel,
+    required this.fieldHint,
+    required this.textInputAction,
+    this.keyboardType = TextInputType.text,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,32 +27,46 @@ class TextFieldComponent extends StatelessWidget {
         Text.rich(
           TextSpan(
             text: primaryLabel,
+            style: GoogleFonts.montserrat(
+              fontWeight: FontWeight.w400,
+              fontSize: 14,
+              color: AppTheme.secondary,
+              height: 1,
+            ),
             children: [
-              TextSpan(text: secondaryLabel),
+              TextSpan(
+                text: secondaryLabel,
+                style: GoogleFonts.montserrat(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14,
+                  color: AppTheme.secondary,
+                ),
+              ),
             ],
           ),
         ),
         TextField(
+          textInputAction: textInputAction,
+          keyboardType: keyboardType,
           decoration: InputDecoration(
-            hintText: 'Nome completo',
-            enabledBorder: UnderlineInputBorder(
+            hintText: fieldHint,
+            hintStyle: GoogleFonts.montserrat(
+              fontWeight: FontWeight.w400,
+              fontSize: 16,
+              color: AppTheme.grey[600],
+            ),
+            focusedBorder: const UnderlineInputBorder(
               borderSide: BorderSide(
-                color: Colors.green,
+                color: AppTheme.primary,
+                style: BorderStyle.solid,
+                width: 2,
               ),
             ),
-            disabledBorder: UnderlineInputBorder(
+            errorBorder: const UnderlineInputBorder(
               borderSide: BorderSide(
-                color: Colors.green,
-              ),
-            ),
-            border: UnderlineInputBorder(
-              borderSide: BorderSide(
-                color: Colors.green,
-              ),
-            ),
-            focusedBorder: UnderlineInputBorder(
-              borderSide: BorderSide(
-                color: Colors.green,
+                color: AppTheme.red,
+                style: BorderStyle.solid,
+                width: 2,
               ),
             ),
           ),

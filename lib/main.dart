@@ -14,6 +14,7 @@ class AppWidget extends StatelessWidget {
     return MaterialApp.router(
       title: 'Simulador de Crédito',
       theme: ThemeData(primarySwatch: Colors.blue),
+      debugShowCheckedModeBanner: false,
       routeInformationParser: Modular.routeInformationParser,
       routerDelegate: Modular.routerDelegate,
     ); //added by extension
