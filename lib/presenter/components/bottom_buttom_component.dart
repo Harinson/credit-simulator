@@ -4,7 +4,13 @@ import 'package:google_fonts/google_fonts.dart';
 import '../theme/app_theme.dart';
 
 class BottomButtomComponent extends StatelessWidget {
-  const BottomButtomComponent({Key? key}) : super(key: key);
+  final String text;
+  final void Function()? onPressed;
+  const BottomButtomComponent({
+    Key? key,
+    required this.text,
+    required this.onPressed,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +20,10 @@ class BottomButtomComponent extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         height: 50,
         child: MaterialButton(
-          onPressed: () {},
+          onPressed: onPressed,
           color: AppTheme.primary,
           child: Text(
-            'Continuar',
+            text,
             style: GoogleFonts.montserrat(
               fontWeight: FontWeight.bold,
               fontSize: 16,

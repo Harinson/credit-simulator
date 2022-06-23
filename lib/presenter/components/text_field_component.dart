@@ -48,10 +48,16 @@ class TextFieldComponent extends StatelessWidget {
         TextField(
           textInputAction: textInputAction,
           keyboardType: keyboardType,
+          cursorColor: AppTheme.primary,
+          style: GoogleFonts.montserrat(
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
+            color: AppTheme.primary,
+          ),
           decoration: InputDecoration(
             hintText: fieldHint,
             hintStyle: GoogleFonts.montserrat(
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.w500,
               fontSize: 16,
               color: AppTheme.grey[600],
             ),
