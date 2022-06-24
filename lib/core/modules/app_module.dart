@@ -1,7 +1,7 @@
-import 'package:credit_simulator/presenter/pages/first_step/first_step_page.dart';
-import 'package:credit_simulator/presenter/pages/home/home_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../../presenter/pages/first_step/first_step_page.dart';
+import '../../presenter/pages/home/home_page.dart';
 import '../../presenter/pages/second_step/second_step_page.dart';
 
 class AppModule extends Module {

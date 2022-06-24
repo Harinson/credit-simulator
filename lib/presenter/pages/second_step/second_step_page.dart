@@ -1,11 +1,11 @@
-import 'package:credit_simulator/presenter/components/bottom_buttom_component.dart';
-import 'package:credit_simulator/presenter/components/progress_bar_component.dart';
-import 'package:credit_simulator/presenter/components/slider_field_component.dart';
-import 'package:credit_simulator/presenter/pages/first_step/widgets/first_step_title_widget.dart';
-import 'package:credit_simulator/presenter/pages/second_step/widgets/second_step_title_widget.dart';
-import 'package:credit_simulator/presenter/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../components/bottom_buttom_component.dart';
+import '../../components/progress_bar_component.dart';
+import '../../components/slider_field_component.dart';
+import '../../theme/app_theme.dart';
+import 'widgets/second_step_title_widget.dart';
 
 class SecondStepPage extends StatelessWidget {
   const SecondStepPage({Key? key}) : super(key: key);
@@ -39,12 +39,12 @@ class SecondStepPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SliderFieldComponent(
+                    const SliderFieldComponent(
                       initialLabel: 'Escolha a ',
                       finalLabel: 'quantidade de parcelas',
                     ),
                     const SizedBox(height: 20),
-                    SliderFieldComponent(
+                    const SliderFieldComponent(
                       initialLabel: 'Escolha o ',
                       finalLabel: 'percentual de garantia',
                     ),
@@ -61,7 +61,7 @@ class SecondStepPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      'Bitcoin caiu? Fique tranquilo!'
+                      'Bitcoin caiu? Fique tranquilo! '
                       'Na garantia protegida, você não '
                       'recebe chamada de margem e não é liquidado',
                       style: GoogleFonts.hindGuntur(

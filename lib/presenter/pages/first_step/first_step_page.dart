@@ -1,10 +1,11 @@
-import 'package:credit_simulator/presenter/components/bottom_buttom_component.dart';
-import 'package:credit_simulator/presenter/components/progress_bar_component.dart';
-import 'package:credit_simulator/presenter/pages/first_step/widgets/first_step_title_widget.dart';
-import 'package:credit_simulator/presenter/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../components/bottom_buttom_component.dart';
+import '../../components/progress_bar_component.dart';
+import '../../theme/app_theme.dart';
+import 'widgets/first_step_title_widget.dart';
 
 class FirstStepPage extends StatelessWidget {
   const FirstStepPage({Key? key}) : super(key: key);

@@ -1,8 +1,9 @@
-import 'package:credit_simulator/presenter/components/bottom_buttom_component.dart';
-import 'package:credit_simulator/presenter/components/text_field_component.dart';
-import 'package:credit_simulator/presenter/pages/home/widgets/home_title_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+
+import '../../components/bottom_buttom_component.dart';
+import '../../components/text_field_component.dart';
+import 'widgets/home_title_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
