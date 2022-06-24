@@ -9,6 +9,9 @@ class TextFieldComponent extends StatelessWidget {
   final String fieldHint;
   final TextInputAction textInputAction;
   final TextInputType keyboardType;
+  final void Function(String)? onChanged;
+  final String? Function(String?)? validator;
+
   const TextFieldComponent({
     Key? key,
     required this.primaryLabel,
@@ -16,6 +19,8 @@ class TextFieldComponent extends StatelessWidget {
     required this.fieldHint,
     required this.textInputAction,
     this.keyboardType = TextInputType.text,
+    this.onChanged,
+    this.validator,
   }) : super(key: key);
 
   @override
@@ -45,7 +50,9 @@ class TextFieldComponent extends StatelessWidget {
             ],
           ),
         ),
-        TextField(
+        TextFormField(
+          onChanged: onChanged,
+          validator: validator,
           textInputAction: textInputAction,
           keyboardType: keyboardType,
           cursorColor: AppTheme.primary,
