@@ -1,6 +1,8 @@
 import 'package:credit_simulator/presenter/components/bottom_buttom_component.dart';
 import 'package:credit_simulator/presenter/components/progress_bar_component.dart';
+import 'package:credit_simulator/presenter/components/slider_field_component.dart';
 import 'package:credit_simulator/presenter/pages/first_step/widgets/first_step_title_widget.dart';
+import 'package:credit_simulator/presenter/pages/second_step/widgets/second_step_title_widget.dart';
 import 'package:credit_simulator/presenter/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -29,48 +31,60 @@ class SecondStepPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const FirstStepTitleWidget(),
+              const SecondStepTitleWidget(),
               const SizedBox(height: 20),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.6,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TextField(
-                      cursorColor: AppTheme.primary,
-                      keyboardType: TextInputType.number,
-                      style: GoogleFonts.montserrat(
+                    SliderFieldComponent(
+                      initialLabel: 'Escolha a ',
+                      finalLabel: 'quantidade de parcelas',
+                    ),
+                    const SizedBox(height: 20),
+                    SliderFieldComponent(
+                      initialLabel: 'Escolha o ',
+                      finalLabel: 'percentual de garantia',
+                    ),
+                    const SizedBox(height: 40),
+                    Text(
+                      'Garantia protegida',
+                      style: GoogleFonts.hindGuntur(
                         fontWeight: FontWeight.bold,
-                        fontSize: 30,
+                        fontSize: 26,
                         color: AppTheme.primary,
+                        letterSpacing: 0.6,
+                        height: 1,
                       ),
-                      decoration: InputDecoration(
-                        hintText: 'R\$ 25.000',
-                        hintStyle: GoogleFonts.montserrat(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 30,
-                          color: AppTheme.grey[600],
-                        ),
-                        focusedBorder: const UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: AppTheme.primary,
-                            style: BorderStyle.solid,
-                            width: 2,
-                          ),
-                        ),
-                        errorBorder: const UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: AppTheme.red,
-                            style: BorderStyle.solid,
-                            width: 2,
-                          ),
-                        ),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      'Bitcoin caiu? Fique tranquilo!'
+                      'Na garantia protegida, você não '
+                      'recebe chamada de margem e não é liquidado',
+                      style: GoogleFonts.hindGuntur(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 18,
+                        color: AppTheme.secondary,
+                        letterSpacing: 0.6,
+                        height: 1,
                       ),
                     ),
                   ],
                 ),
               ),
-              BottomButtomComponent(text: 'Continuar', onPressed: () {}),
+              BottomButtomComponent(
+                text: 'Continuar sem garantia',
+                onPressed: () {},
+                isPrimary: false,
+              ),
+              const SizedBox(height: 10),
+              BottomButtomComponent(
+                text: 'Adicionar garantia',
+                onPressed: () {},
+              ),
             ],
           ),
         ),
