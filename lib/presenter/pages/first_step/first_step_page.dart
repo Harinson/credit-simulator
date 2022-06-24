@@ -3,6 +3,7 @@ import 'package:credit_simulator/presenter/components/progress_bar_component.dar
 import 'package:credit_simulator/presenter/pages/first_step/widgets/first_step_title_widget.dart';
 import 'package:credit_simulator/presenter/theme/app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class FirstStepPage extends StatelessWidget {
@@ -70,7 +71,12 @@ class FirstStepPage extends StatelessWidget {
                   ],
                 ),
               ),
-              BottomButtomComponent(text: 'Continuar', onPressed: () {}),
+              BottomButtomComponent(
+                text: 'Continuar',
+                onPressed: () {
+                  Modular.to.pushNamed('/second-step');
+                },
+              ),
             ],
           ),
         ),

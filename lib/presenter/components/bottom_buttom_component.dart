@@ -6,10 +6,12 @@ import '../theme/app_theme.dart';
 class BottomButtomComponent extends StatelessWidget {
   final String text;
   final void Function()? onPressed;
+  final bool isPrimary;
   const BottomButtomComponent({
     Key? key,
     required this.text,
     required this.onPressed,
+    this.isPrimary = true,
   }) : super(key: key);
 
   @override
@@ -21,13 +23,14 @@ class BottomButtomComponent extends StatelessWidget {
         height: 50,
         child: MaterialButton(
           onPressed: onPressed,
-          color: AppTheme.primary,
+          color: isPrimary ? AppTheme.primary : Colors.white,
+          elevation: isPrimary ? 2 : 0,
           child: Text(
             text,
             style: GoogleFonts.montserrat(
               fontWeight: FontWeight.bold,
               fontSize: 16,
-              color: Colors.white,
+              color: isPrimary ? Colors.white : AppTheme.primary,
               letterSpacing: 0.6,
             ),
           ),
