@@ -1,29 +1,93 @@
-# This file configures the analyzer, which statically analyzes Dart code to
-# check for errors, warnings, and lints.
-#
-# The issues identified by the analyzer are surfaced in the UI of Dart-enabled
-# IDEs (https://dart.dev/tools#ides-and-editors). The analyzer can also be
-# invoked from the command line by running `flutter analyze`.
-
-# The following line activates a set of recommended lints for Flutter apps,
-# packages, and plugins designed to encourage good coding practices.
 include: package:flutter_lints/flutter.yaml
 
-linter:
-  # The lint rules applied to this project can be customized in the
-  # section below to disable rules from the `package:flutter_lints/flutter.yaml`
-  # included above or to enable additional rules. A list of all available lints
-  # and their documentation is published at
-  # https://dart-lang.github.io/linter/lints/index.html.
-  #
-  # Instead of disabling a lint rule for the entire project in the
-  # section below, it can also be suppressed for a single line of code
-  # or a specific dart file by using the `// ignore: name_of_lint` and
-  # `// ignore_for_file: name_of_lint` syntax on the line or in the file
-  # producing the lint.
-  rules:
-    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
-    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+analyzer:
+  errors:
+    missing_required_param: error
+    deprecated_member_use: ignore
+    deprecated_member_use_from_same_package: ignore
+  
+  exclude:
+    - test/*
 
-# Additional information about this file can be found at
-# https://dart.dev/guides/language/analysis-options
+linter:
+  rules:
+    - always_declare_return_types
+    - always_require_non_null_named_parameters
+    - annotate_overrides
+    - avoid_bool_literals_in_conditional_expressions
+    - avoid_double_and_int_checks
+    - avoid_empty_else
+    - avoid_escaping_inner_quotes
+    - avoid_init_to_null
+    - avoid_print
+    - avoid_return_types_on_setters
+    - avoid_returning_null_for_void
+    - avoid_setters_without_getters
+    - avoid_unnecessary_containers
+    - avoid_unused_constructor_parameters
+    - avoid_void_async
+    - avoid_web_libraries_in_flutter
+    - await_only_futures
+    - camel_case_types
+    - camel_case_extensions
+    - cancel_subscriptions
+    - control_flow_in_finally
+    - curly_braces_in_flow_control_structures
+    - directives_ordering
+    - empty_constructor_bodies
+    - empty_statements
+    - empty_catches
+    - exhaustive_cases
+    - file_names
+    - hash_and_equals
+    - join_return_with_assignment
+    - implementation_imports
+    - library_names
+    - lines_longer_than_80_chars
+    - leading_newlines_in_multiline_strings
+    - missing_whitespace_between_adjacent_strings
+    - non_constant_identifier_names
+    - null_closures
+    - package_api_docs
+    - package_names
+    - package_prefixed_library_names
+    - parameter_assignments
+    - prefer_adjacent_string_concatenation
+    - prefer_collection_literals
+    - prefer_conditional_assignment
+    - prefer_contains
+    - prefer_function_declarations_over_variables
+    - prefer_if_null_operators
+    - prefer_is_empty
+    - prefer_is_not_empty
+    - prefer_is_not_operator
+    - prefer_initializing_formals
+    - prefer_null_aware_operators
+    - prefer_relative_imports
+    - prefer_single_quotes
+    - prefer_spread_collections
+    - recursive_getters
+    - sized_box_for_whitespace
+    - slash_for_doc_comments
+    - sort_child_properties_last
+    - test_types_in_equals
+    - throw_in_finally
+    - type_init_formals
+    - unnecessary_brace_in_string_interps
+    - unnecessary_const
+    - unnecessary_getters_setters
+    - unnecessary_lambdas
+    - unnecessary_new
+    - unnecessary_null_aware_assignments
+    - unnecessary_overrides
+    - unnecessary_parenthesis
+    - unnecessary_string_escapes
+    - unnecessary_string_interpolations
+    - unnecessary_statements
+    - unnecessary_this
+    - unrelated_type_equality_checks
+    - use_full_hex_values_for_flutter_colors
+    - use_is_even_rather_than_modulo
+    - use_setters_to_change_properties
+    - valid_regexps
+    - void_checks
