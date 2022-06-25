@@ -51,6 +51,7 @@ class TextFieldComponent extends StatelessWidget {
           ),
         ),
         TextFormField(
+          autovalidateMode: AutovalidateMode.always,
           onChanged: onChanged,
           validator: validator,
           textInputAction: textInputAction,
