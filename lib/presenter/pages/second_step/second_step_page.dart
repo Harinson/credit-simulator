@@ -48,7 +48,7 @@ class _SecondStepPageState extends AppState<SecondStepPage, SecondStepState> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SecondStepTitleWidget(
-                    value: state.chosenValue!,
+                    value: state.chosenValueString,
                   ),
                   const SizedBox(height: 20),
                   SizedBox(

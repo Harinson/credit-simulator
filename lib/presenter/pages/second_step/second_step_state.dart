@@ -16,6 +16,8 @@ class SecondStepState extends ChangeNotifier {
 
   int get parcel => parcelListenable.value;
   int get percent => percentListenable.value;
+  String get chosenValueString =>
+      chosenValue!.toStringAsFixed(2).replaceAll('.', ',');
 
   set parcel(int value) {
     parcelListenable.value = value;
@@ -29,7 +31,7 @@ class SecondStepState extends ChangeNotifier {
     required bool isGaranteed,
   }) async {
     await saveValues(isGaranteed: isGaranteed);
-    Modular.to.pushNamed('/third-step');
+    Modular.to.pushNamed('/final-step');
   }
 
   Future<void> saveValues({

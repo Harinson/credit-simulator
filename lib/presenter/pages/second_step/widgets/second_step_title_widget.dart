@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../theme/app_theme.dart';
 
 class SecondStepTitleWidget extends StatelessWidget {
-  final double value;
+  final String value;
   const SecondStepTitleWidget({
     Key? key,
     required this.value,

@@ -1,5 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../../presenter/pages/final_step/final_step_page.dart';
+import '../../presenter/pages/final_step/final_step_state.dart';
 import '../../presenter/pages/first_step/first_step_page.dart';
 import '../../presenter/pages/first_step/first_step_state.dart';
 import '../../presenter/pages/home/home_page.dart';
@@ -19,6 +21,9 @@ class AppModule extends Module {
         Bind(
           (i) => SecondStepState(),
         ),
+        Bind(
+          (i) => FinalStepState(),
+        ),
       ];
 
   @override
@@ -35,5 +40,9 @@ class AppModule extends Module {
           '/second-step',
           child: (ctx, args) => const SecondStepPage(),
         ),
+        ChildRoute(
+          '/final-step',
+          child: (context, args) => const FinalStepPage(),
+        )
       ];
 }
