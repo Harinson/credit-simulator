@@ -15,8 +15,8 @@ class FirstStepState extends ChangeNotifier {
     if (value!.trim().isEmpty) {
       return 'Valor é obrigatório';
     }
-    if (formatterAmount.getUnformattedValue() < 500) {
-      return 'Valor mínimo de R\$500';
+    if (formatterAmount.getUnformattedValue() < 1000) {
+      return 'Valor mínimo de R\$1000';
     }
     if (formatterAmount.getUnformattedValue() > 300000) {
       return 'Valor máximo de R\$300.000';

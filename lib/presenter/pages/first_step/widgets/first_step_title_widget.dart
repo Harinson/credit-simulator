@@ -41,7 +41,7 @@ class FirstStepTitleWidget extends StatelessWidget {
             ),
             children: [
               TextSpan(
-                text: 'R\$ 500 ',
+                text: 'R\$ 1000 ',
                 style: GoogleFonts.hindGuntur(
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
