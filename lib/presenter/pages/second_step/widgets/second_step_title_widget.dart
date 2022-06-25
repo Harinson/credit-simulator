@@ -4,7 +4,11 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../theme/app_theme.dart';
 
 class SecondStepTitleWidget extends StatelessWidget {
-  const SecondStepTitleWidget({Key? key}) : super(key: key);
+  final double value;
+  const SecondStepTitleWidget({
+    Key? key,
+    required this.value,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +26,7 @@ class SecondStepTitleWidget extends StatelessWidget {
           ),
         ),
         Text(
-          'R\$ 25.000',
+          'R\$ $value',
           style: GoogleFonts.hindGuntur(
             fontWeight: FontWeight.bold,
             fontSize: 32,

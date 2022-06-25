@@ -5,6 +5,7 @@ import '../../presenter/pages/first_step/first_step_state.dart';
 import '../../presenter/pages/home/home_page.dart';
 import '../../presenter/pages/home/home_state.dart';
 import '../../presenter/pages/second_step/second_step_page.dart';
+import '../../presenter/pages/second_step/second_step_state.dart';
 
 class AppModule extends Module {
   @override
@@ -14,6 +15,9 @@ class AppModule extends Module {
         ),
         Bind(
           (i) => FirstStepState(),
+        ),
+        Bind(
+          (i) => SecondStepState(),
         ),
       ];
 

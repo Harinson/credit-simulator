@@ -52,7 +52,7 @@ class _FirstStepPageState extends AppState<FirstStepPage, FirstStepState> {
                         validator: (value) => state.validateAmount(value),
                         cursorColor: AppTheme.primary,
                         keyboardType: TextInputType.number,
-                        autovalidateMode: AutovalidateMode.always,
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
                         inputFormatters: [
                           state.formatterAmount,
                         ],

@@ -6,10 +6,23 @@ import '../theme/app_theme.dart';
 class SliderFieldComponent extends StatelessWidget {
   final String initialLabel;
   final String finalLabel;
+  final double value;
+  final double min;
+  final double max;
+  final String label;
+  final int divisions;
+  final Function(double) onChanged;
+
   const SliderFieldComponent({
     Key? key,
     required this.initialLabel,
     required this.finalLabel,
+    required this.value,
+    required this.min,
+    required this.max,
+    required this.label,
+    required this.divisions,
+    required this.onChanged,
   }) : super(key: key);
 
   @override
@@ -38,14 +51,14 @@ class SliderFieldComponent extends StatelessWidget {
           ),
         ),
         Slider(
-          value: 3,
-          onChanged: (value) {},
-          max: 12,
-          min: 3,
-          divisions: 3,
+          value: value,
+          onChanged: onChanged,
+          max: max,
+          min: min,
+          divisions: divisions,
           thumbColor: AppTheme.primary,
           activeColor: AppTheme.primary,
-          label: '3',
+          label: label,
           inactiveColor: AppTheme.primary.withOpacity(0.2),
         ),
       ],
