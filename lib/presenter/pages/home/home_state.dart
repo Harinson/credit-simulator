@@ -40,7 +40,7 @@ class HomeState extends ChangeNotifier {
   Future<void> nextPage() async {
     if (formKey.currentState!.validate()) {
       await saveValues();
-      Modular.to.pushNamed('/first-step');
+      Modular.to.pushNamedAndRemoveUntil('/first-step', (route) => false);
     }
   }
 

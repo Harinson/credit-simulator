@@ -67,7 +67,7 @@ class _FinalStepPageState extends AppState<FinalStepPage, FinalStepState> {
                         ),
                         BottomButtomComponent(
                           text: 'Nova simulação',
-                          onPressed: () {},
+                          onPressed: () => state.newSimulation(),
                         ),
                         const SizedBox(height: 20),
                       ],
