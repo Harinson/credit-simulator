@@ -1,14 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../domain/entities/simulation_entity.dart';
 import '../../../domain/usecases/cancel_simulation_usecase.dart';
 import '../../../domain/usecases/get_simulation_usecase.dart';
-import '../../components/cancel_alert_component.dart';
-import '../../theme/app_theme.dart';
 
 class FinalStepState extends ChangeNotifier {
   final GetSimulationUsecase _getSimulationUsecase;

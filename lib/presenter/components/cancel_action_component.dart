@@ -1,7 +1,6 @@
-import 'package:credit_simulator/presenter/theme/app_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
+import '../theme/app_theme.dart';
 
 class CancelActionComponent extends StatelessWidget {
   final Function() onTap;
