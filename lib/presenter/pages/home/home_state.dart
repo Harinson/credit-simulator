@@ -46,7 +46,7 @@ class HomeState extends ChangeNotifier {
 
   Future<void> saveValues() async {
     final prefs = await SharedPreferences.getInstance();
-    prefs.setString('name', name);
+    prefs.setString('fullName', name);
     prefs.setString('email', email);
   }
 }

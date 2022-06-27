@@ -25,13 +25,13 @@ class FinalStepLineWidget extends StatelessWidget {
               title,
               style: GoogleFonts.montserrat(
                 fontWeight: FontWeight.bold,
-                fontSize: 16,
+                fontSize: 14,
               ),
             ),
             Text(
               value,
               style: GoogleFonts.montserrat(
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w600,
                 fontSize: 16,
                 color: AppTheme.grey,
               ),

@@ -8,6 +8,7 @@ import '../../components/progress_bar_component.dart';
 import '../../components/slider_field_component.dart';
 import '../../theme/app_theme.dart';
 import 'final_step_state.dart';
+import 'widgets/final_step_body_widget.dart';
 import 'widgets/final_step_line_widget.dart';
 
 class FinalStepPage extends StatefulWidget {
@@ -56,22 +57,15 @@ class _FinalStepPageState extends AppState<FinalStepPage, FinalStepState> {
                         const SizedBox(height: 50),
                         SizedBox(
                           height: MediaQuery.of(context).size.height * 0.6,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              FinalStepLineWidget(
-                                title: 'Valor do empréstimo',
-                                value: '10 real',
-                              ),
-                            ],
+                          child: FinalStepBodyWidget(
+                            simulation: state.simulation,
                           ),
                         ),
-                        const SizedBox(height: 10),
                         BottomButtomComponent(
                           text: 'Nova simulação',
                           onPressed: () {},
                         ),
+                        const SizedBox(height: 20),
                       ],
                     ),
                   ),
