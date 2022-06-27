@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import '../../domain/entities/simulation_entity.dart';
 import '../../infra/datasources/simulation_datasource.dart';
@@ -25,7 +26,7 @@ class SimulationDatasouce implements ISimulationDatasource {
       'has_protected_collateral': garanteed,
     };
     final response = await Dio().post(
-      'https://api.rispar.com.br/acquisition/simulation',
+      dotenv.env['API']!,
       data: bodyParameters,
     );
     return SimulationModel.fromJson(response.data);
