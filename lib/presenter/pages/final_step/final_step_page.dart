@@ -1,15 +1,13 @@
-import 'package:credit_simulator/presenter/pages/final_step/widgets/final_step_loading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../core/presenter/app_state.dart';
 import '../../components/bottom_buttom_component.dart';
 import '../../components/progress_bar_component.dart';
-import '../../components/slider_field_component.dart';
 import '../../theme/app_theme.dart';
 import 'final_step_state.dart';
 import 'widgets/final_step_body_widget.dart';
-import 'widgets/final_step_line_widget.dart';
+import 'widgets/final_step_loading_widget.dart';
 
 class FinalStepPage extends StatefulWidget {
   const FinalStepPage({Key? key}) : super(key: key);
