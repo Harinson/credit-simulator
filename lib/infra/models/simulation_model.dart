@@ -1,3 +1,5 @@
+import 'package:faker/faker.dart';
+
 import '../../domain/entities/simulation_entity.dart';
 
 class SimulationModel extends SimulationEntity {
@@ -61,6 +63,29 @@ class SimulationModel extends SimulationEntity {
       interestRate: json['interest_rate'],
       monthlyRate: json['monthly_rate'],
       annualRate: json['annual_rate'],
+    );
+  }
+
+  factory SimulationModel.fake() {
+    return SimulationModel(
+      fullName: faker.person.name(),
+      email: faker.internet.email(),
+      ltv: faker.randomGenerator.decimal(min: 0, scale: 2),
+      contractValue: faker.randomGenerator.decimal(min: 0, scale: 2),
+      netValue: faker.randomGenerator.decimal(min: 0, scale: 2),
+      installmentValue: faker.randomGenerator.decimal(min: 0, scale: 2),
+      lastInstallmentValue: faker.randomGenerator.decimal(min: 0, scale: 2),
+      iofFee: faker.randomGenerator.decimal(min: 0, scale: 2),
+      originationFee: faker.randomGenerator.decimal(min: 0, scale: 2),
+      term: faker.randomGenerator.integer(100),
+      collateral: faker.randomGenerator.decimal(min: 0, scale: 2),
+      collateralInBrl: faker.randomGenerator.decimal(min: 0, scale: 2),
+      collateralUnitPrice: faker.randomGenerator.decimal(min: 0, scale: 2),
+      firstDueDate: DateTime.now(),
+      lastDueDate: DateTime.now(),
+      interestRate: faker.randomGenerator.decimal(min: 0, scale: 2),
+      monthlyRate: faker.randomGenerator.decimal(min: 0, scale: 2),
+      annualRate: faker.randomGenerator.decimal(min: 0, scale: 2),
     );
   }
 }
