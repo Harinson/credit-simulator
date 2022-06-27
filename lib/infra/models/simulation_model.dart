@@ -15,8 +15,8 @@ class SimulationModel extends SimulationEntity {
     required num collateral,
     required num collateralInBrl,
     required num collateralUnitPrice,
-    required String firstDueDate,
-    required String lastDueDate,
+    required DateTime firstDueDate,
+    required DateTime lastDueDate,
     required num interestRate,
     required num monthlyRate,
     required num annualRate,
@@ -43,7 +43,7 @@ class SimulationModel extends SimulationEntity {
 
   factory SimulationModel.fromJson(Map<String, dynamic> json) {
     return SimulationModel(
-      fullName: json['fullName'],
+      fullName: json['fullname'],
       email: json['email'],
       ltv: json['ltv'],
       contractValue: json['contract_value'],
@@ -56,8 +56,8 @@ class SimulationModel extends SimulationEntity {
       collateral: json['collateral'],
       collateralInBrl: json['collateral_in_brl'],
       collateralUnitPrice: json['collateral_unit_price'],
-      firstDueDate: json['first_due_date'],
-      lastDueDate: json['last_due_date'],
+      firstDueDate: DateTime.parse(json['first_due_date']),
+      lastDueDate: DateTime.parse(json['last_due_date']),
       interestRate: json['interest_rate'],
       monthlyRate: json['monthly_rate'],
       annualRate: json['annual_rate'],

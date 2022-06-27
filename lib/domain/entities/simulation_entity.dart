@@ -1,4 +1,6 @@
 import 'package:equatable/equatable.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:intl/intl.dart';
 
 class SimulationEntity extends Equatable {
   final String fullName;
@@ -14,8 +16,8 @@ class SimulationEntity extends Equatable {
   final num collateral;
   final num collateralInBrl;
   final num collateralUnitPrice;
-  final String firstDueDate;
-  final String lastDueDate;
+  final DateTime firstDueDate;
+  final DateTime lastDueDate;
   final num interestRate;
   final num monthlyRate;
   final num annualRate;
@@ -40,6 +42,34 @@ class SimulationEntity extends Equatable {
     required this.monthlyRate,
     required this.annualRate,
   });
+
+  String get formattedNetValue =>
+      'R\$ ${netValue.toStringAsFixed(2).replaceAll('.', ',')}';
+  String get formattedCollateral {
+    final convert = collateral / 100000000;
+    return '₿ ${convert.toStringAsFixed(8).replaceAll('.', ',')}';
+  }
+
+  String get formattedInterestRate =>
+      '${interestRate.toStringAsFixed(2).replaceAll('.', ',')}% a.m.';
+  String get formattedLtv => '$ltv%';
+  String get formattedFirstDueDate {
+    initializeDateFormatting();
+    return DateFormat.yMd().format(firstDueDate).toString();
+  }
+
+  String get formattedIofFee =>
+      'R\$ ${iofFee.toStringAsFixed(2).replaceAll('.', ',')}';
+  String get formattedOriginationFee =>
+      'R\$ ${originationFee.toStringAsFixed(2).replaceAll('.', ',')}';
+  String get formattedContractValue =>
+      'R\$ ${contractValue.toStringAsFixed(2).replaceAll('.', ',')}';
+  String get formatedMonthlyRate =>
+      '${monthlyRate.toStringAsFixed(2).replaceAll('.', ',')}%';
+  String get formatedAnnualRate =>
+      '${annualRate.toStringAsFixed(2).replaceAll('.', ',')}%';
+  String get formattedCollateralUnitPrice =>
+      'R\$ ${collateralUnitPrice.toStringAsFixed(2).replaceAll('.', ',')}';
   @override
   List<Object?> get props => [
         fullName,
@@ -76,8 +106,8 @@ class SimulationEntity extends Equatable {
     num? collateral,
     num? collateralInBrl,
     num? collateralUnitPrice,
-    String? firstDueDate,
-    String? lastDueDate,
+    DateTime? firstDueDate,
+    DateTime? lastDueDate,
     num? interestRate,
     num? monthlyRate,
     num? annualRate,
