@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../core/presenter/app_state.dart';
 import '../../components/bottom_buttom_component.dart';
+import '../../components/cancel_action_component.dart';
 import '../../components/progress_bar_component.dart';
 import '../../theme/app_theme.dart';
 import 'final_step_state.dart';
@@ -33,6 +34,11 @@ class _FinalStepPageState extends AppState<FinalStepPage, FinalStepState> {
                 maxProgress: progress,
                 progress: progress,
               ),
+        actions: [
+          CancelActionComponent(
+            onTap: () => state.cancelSimulation(context: context),
+          ),
+        ],
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

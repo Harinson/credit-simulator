@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../core/presenter/app_state.dart';
 import '../../components/bottom_buttom_component.dart';
+import '../../components/cancel_action_component.dart';
 import '../../components/progress_bar_component.dart';
 import '../../components/slider_field_component.dart';
 import '../../theme/app_theme.dart';
@@ -38,6 +39,11 @@ class _SecondStepPageState extends AppState<SecondStepPage, SecondStepState> {
           maxProgress: progress,
           progress: progress / 3 * 2,
         ),
+        actions: [
+          CancelActionComponent(
+            onTap: () => state.cancelSimulation(context: context),
+          ),
+        ],
       ),
       body: Column(
         children: [

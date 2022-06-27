@@ -1,6 +1,7 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../domain/repositories/simulation_repository.dart';
+import '../../domain/usecases/cancel_simulation_usecase.dart';
 import '../../domain/usecases/get_simulation_usecase.dart';
 import '../../external/datasources/simulation_datasource.dart';
 import '../../infra/datasources/simulation_datasource.dart';
@@ -31,17 +32,25 @@ class AppModule extends Module {
           ),
         ),
         Bind(
+          (i) => CancelSimulationUsecase(),
+        ),
+        Bind(
           (i) => HomeState(),
         ),
         Bind(
-          (i) => FirstStepState(),
+          (i) => FirstStepState(
+            cancelSimulationUsecase: i.get(),
+          ),
         ),
         Bind(
-          (i) => SecondStepState(),
+          (i) => SecondStepState(
+            cancelSimulationUsecase: i.get(),
+          ),
         ),
         Bind(
           (i) => FinalStepState(
             getSimulationUsecase: i.get(),
+            cancelSimulationUsecase: i.get(),
           ),
         ),
       ];

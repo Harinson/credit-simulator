@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../core/presenter/app_state.dart';
 import '../../components/bottom_buttom_component.dart';
+import '../../components/cancel_action_component.dart';
 import '../../components/progress_bar_component.dart';
 import '../../theme/app_theme.dart';
 import 'first_step_state.dart';
@@ -30,6 +31,11 @@ class _FirstStepPageState extends AppState<FirstStepPage, FirstStepState> {
           maxProgress: progress,
           progress: progress / 3,
         ),
+        actions: [
+          CancelActionComponent(
+            onTap: () => state.cancelSimulation(context: context),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Padding(

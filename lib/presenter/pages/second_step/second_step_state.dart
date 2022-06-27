@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../../domain/usecases/cancel_simulation_usecase.dart';
+
 class SecondStepState extends ChangeNotifier {
+  final CancelSimulationUsecase _cancelSimulationUsecase;
   final parcelListenable = ValueNotifier<int>(3);
   final percentListenable = ValueNotifier<int>(20);
   final formKey = GlobalKey<FormState>();
   double? chosenValue = 0;
+
+  SecondStepState({
+    required CancelSimulationUsecase cancelSimulationUsecase,
+  }) : _cancelSimulationUsecase = cancelSimulationUsecase;
 
   Future<void> initValue() async {
     final prefs = await SharedPreferences.getInstance();
@@ -41,5 +48,13 @@ class SecondStepState extends ChangeNotifier {
     prefs.setInt('parcel', parcel);
     prefs.setInt('percent', percent);
     prefs.setBool('isGaranteed', isGaranteed);
+  }
+
+  void cancelSimulation({
+    required BuildContext context,
+  }) {
+    _cancelSimulationUsecase.call(
+      context: context,
+    );
   }
 }

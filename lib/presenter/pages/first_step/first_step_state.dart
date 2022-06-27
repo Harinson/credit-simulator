@@ -3,13 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../../domain/usecases/cancel_simulation_usecase.dart';
+
 class FirstStepState extends ChangeNotifier {
+  final CancelSimulationUsecase _cancelSimulationUsecase;
+
   final formKey = GlobalKey<FormState>();
   final formatterAmount = CurrencyTextInputFormatter(
     decimalDigits: 2,
     locale: 'pt_BR',
     symbol: 'R\$',
   );
+
+  FirstStepState({
+    required CancelSimulationUsecase cancelSimulationUsecase,
+  }) : _cancelSimulationUsecase = cancelSimulationUsecase;
 
   String? validateAmount(String? value) {
     if (value!.trim().isEmpty) {
@@ -34,5 +42,13 @@ class FirstStepState extends ChangeNotifier {
   Future<void> saveValues() async {
     final prefs = await SharedPreferences.getInstance();
     prefs.setDouble('amount', formatterAmount.getUnformattedValue().toDouble());
+  }
+
+  void cancelSimulation({
+    required BuildContext context,
+  }) {
+    _cancelSimulationUsecase.call(
+      context: context,
+    );
   }
 }
